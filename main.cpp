@@ -35,6 +35,7 @@ void displayStudents(const std::vector<Student>& database) {
         std::cout << "Средний балл: " << student.gpa << "\n\n";
     }
 }
+// Функция для вычисления количества студентов в базе данных
 int countStudents(const std::vector<Student>& database) {
     return database.size();
 }
