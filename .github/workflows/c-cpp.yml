@@ -1,0 +1,22 @@
+name: C++ CI
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y build-essential
+
+    - name: Build main program
+      run: g++ -std=c++11 -o main main.cpp
+
+    - name: Build tests
+      run: g++ -std=c++11 -o tests tests.cpp
+
+    - name: Run tests
+      run: ./tests
