@@ -35,7 +35,9 @@ void displayStudents(const std::vector<Student>& database) {
         std::cout << "Средний балл: " << student.gpa << "\n\n";
     }
 }
-
+int countStudents(const std::vector<Student>& database) {
+    return database.size();
+}
 int main() {
     std::vector<Student> database;
 
@@ -55,6 +57,10 @@ int main() {
                 break;
             case 2:
                 displayStudents(database);
+                break;
+            case 3:
+                std::cout << "Количество студентов в базе: " 
+                          << countStudents(database) << "\n";
                 break;
             case 0:
                 std::cout << "Выход из программы.\n";
